@@ -15,12 +15,6 @@ module Shoppe
       g.javascripts     false
       g.helper          false
     end
-
-    config.to_prepare do
-      Dir.glob(Rails.root + "app/decorators/**/*_decorator*.rb").each do |c|
-        require_dependency(c)
-      end
-    end
     
     initializer 'shoppe.initialize' do |app|
       # Add the default settings
@@ -41,6 +35,11 @@ module Shoppe
         require 'shoppe/view_helpers'
         ActionView::Base.send :include, Shoppe::ViewHelpers
       end
+
+      ActiveSupport.on_load(:active_record) do
+        require 'shoppe/model_extension'
+        ActiveRecord::Base.send :include, Shoppe::ModelExtension
+      end
       
       # Load default navigation
       require 'shoppe/default_navigation'
@@ -52,4 +51,3 @@ module Shoppe
     
   end
 end
-
