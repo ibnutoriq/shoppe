@@ -31,10 +31,8 @@ Gem::Specification.new do |s|
   s.add_dependency "nifty-dialog", "~> 1.0"
   s.add_dependency "carrierwave", "~> 0.10.0"
   s.add_dependency "fog", "~> 1.24.0"
-  s.add_dependency "mini_magick", "~> 3.8.1"
+  s.add_dependency "rmagick", "~> 2.14"
 
-  s.add_development_dependency "sqlite3", "~> 1.3"
-  s.add_development_dependency "mysql2", "~> 0.3"
   s.add_development_dependency 'yard', "~> 0"
   s.add_development_dependency "yard-activerecord", "~> 0"
   s.add_development_dependency "markdown", "~> 1.0"
