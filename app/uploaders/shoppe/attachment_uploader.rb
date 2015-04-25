@@ -2,7 +2,7 @@
 
 class Shoppe::AttachmentUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
 
   storage :file
 
